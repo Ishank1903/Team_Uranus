@@ -4,74 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login - Banking System</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #448AFF, #2979FF);
+            /* Gradient background */
+            color: grey;
+            /* Text color */
             font-family: Arial, sans-serif;
+            margin: 0;
+            /* Remove default margin */
+            padding: 0;
+            /* Remove default padding */
+            height: 100vh;
+            /* Set full viewport height */
+            overflow: hidden;
+            /* Hide vertical scrollbars */
         }
 
         .login-container {
             max-width: 400px;
             margin: 0 auto;
             padding: 30px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 20px 0px #888888;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white background */
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+            /* Box shadow */
             border-radius: 10px;
-            margin-top: 100px;
+            margin-top: 10vh;
+            /* Adjust margin from top of the viewport */
         }
 
         .login-header {
             text-align: center;
             margin-bottom: 30px;
-            color: #007bff;
+            color: #2979FF;
+            /* Header text color */
+            font-size: 28px;
+            font-weight: bold;
         }
 
-        .form-group input[type="text"],
+        .form-group input[type="email"],
         .form-group input[type="password"] {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #ccc;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent white input background */
+            border: none;
             border-radius: 5px;
             margin-bottom: 20px;
             font-size: 16px;
+            color: #333;
+            /* Input text color */
         }
 
-        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
         .form-group input[type="password"]:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px #007bff;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white input background on focus */
         }
 
         .btn-login {
             width: 100%;
             padding: 15px;
-            background-color: #007bff;
+            background-color: #2979FF;
+            /* Button background color */
             border: none;
             border-radius: 5px;
             font-size: 18px;
             color: #fff;
+            /* Button text color */
             transition: background-color 0.3s;
+            cursor: pointer;
         }
 
         .btn-login:hover {
-            background-color: #0056b3;
+            background-color: #1E5CE1;
+            /* Button background color on hover */
         }
 
-        .login-footer {
+        .text-center {
             text-align: center;
-            margin-top: 20px;
         }
 
-        .login-footer a {
+        .register-link {
+            color: #2979FF;
             text-decoration: none;
-            color: #007bff;
         }
 
-        .login-footer a:hover {
+        .register-link:hover {
             text-decoration: underline;
         }
     </style>
@@ -80,22 +104,20 @@
 <body>
     <div class="container">
         <div class="login-container">
-            <h2 class="login-header">Login</h2>
+            <h2 class="login-header">Welcome Back!</h2>
             <form>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
                 <button type="submit" class="btn btn-login">Login</button>
             </form>
-            <div class="login-footer">
-                <a href="#">Forgot Password?</a>
-            </div>
+            <p class="text-center mt-3">Don't have an account? <a href="registration.html"
+                    class="register-link">Register</a></p>
         </div>
     </div>
-
 
     <!-- Link to Bootstrap JS if needed -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
