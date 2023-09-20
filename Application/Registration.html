@@ -4,115 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Registration</title>
+    <title>Registration - Banking System</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #448AFF, #2979FF);
+            color: #fff;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .registration-container {
-            max-width: 500px;
+            max-width: 400px;
             margin: 0 auto;
             padding: 30px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 20px 0px #888888;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            margin-top: 50px;
+            margin-top: 10vh;
         }
 
         .registration-header {
             text-align: center;
             margin-bottom: 30px;
-            color: #007bff;
+            color: #2979FF;
+            font-size: 28px;
+            font-weight: bold;
         }
 
         .form-group input[type="text"],
         .form-group input[type="email"],
-        .form-group input[type="password"],
-        .form-group input[type="tel"] {
+        .form-group input[type="password"] {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #ccc;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
             border-radius: 5px;
             margin-bottom: 20px;
             font-size: 16px;
+            color: #333;
         }
 
         .form-group input[type="text"]:focus,
         .form-group input[type="email"]:focus,
-        .form-group input[type="password"]:focus,
-        .form-group input[type="tel"]:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px #007bff;
-        }
-
-        .custom-select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 16px;
-            appearance: none;
-        }
-
-        .custom-select:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px #007bff;
+        .form-group input[type="password"]:focus {
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
         .btn-register {
             width: 100%;
             padding: 15px;
-            background-color: #007bff;
+            background-color: #2979FF;
             border: none;
             border-radius: 5px;
             font-size: 18px;
             color: #fff;
             transition: background-color 0.3s;
+            cursor: pointer;
         }
 
         .btn-register:hover {
-            background-color: #0056b3;
+            background-color: #1E5CE1;
         }
 
-        .btn-login {
-            width: 100%;
-            padding: 15px;
-            background-color: #28a745;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .btn-login:hover {
-            background-color: #1d8f44;
-        }
-
-        .logo-container {
+        .text-center {
             text-align: center;
-            margin-bottom: 20px;
         }
 
-        .bank-logo {
-            max-width: 100px;
+        .login-link {
+            color: #2979FF;
+            text-decoration: none;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="hsbc_logo.png" alt="HSBC Logo" class="bank-logo">
-        </div>
         <div class="registration-container">
-            <h2 class="registration-header">Bank Registration</h2>
+            <h2 class="registration-header">Create an Account</h2>
             <form>
                 <div class="form-group">
                     <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
@@ -123,19 +101,9 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
-                <div class="form-group">
-                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
-                </div>
-                <div class="form-group">
-                    <select class="custom-select" id="account-type" required>
-                        <option value="" disabled selected>Select Account Type</option>
-                        <option value="savings">Savings Account</option>
-                        <option value="checking">Checking Account</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-register">Register</button>
             </form>
-            <p class="text-center mt-3">Already registered? <a href="login.html" class="btn btn-login">Login</a></p>
+            <p class="text-center mt-3">Already have an account? <a href="login.html" class="login-link">Login</a></p>
         </div>
     </div>
 
