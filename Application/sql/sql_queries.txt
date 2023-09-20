@@ -1,0 +1,64 @@
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DateOfBirth DATE,
+    Address VARCHAR(100),
+    PhoneNumber VARCHAR(15),
+    Email VARCHAR(100)
+);
+
+CREATE TABLE Accounts (
+    AccountNumber INT PRIMARY KEY,
+    CustomerID INT,
+    AccountType VARCHAR(20), 
+    Balance DECIMAL(15, 2),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+
+CREATE TABLE Transactions (
+    TransactionID INT PRIMARY KEY,
+    AccountNumber INT,
+    TransactionType VARCHAR(20), 
+    Amount DECIMAL(15, 2),
+    TransactionDate TIMESTAMP,
+    FOREIGN KEY (AccountNumber) REFERENCES Accounts(AccountNumber)
+);
+
+
+INSERT INTO Customers (CustomerID, FirstName, LastName, DateOfBirth, Address, PhoneNumber, Email)
+VALUES (1, 'Anish', 'G', TO_DATE('1990-01-15', 'YYYY-MM-DD'), '221B Bakers street', '555-123-4567', 'anishg@uranus.com');
+
+INSERT INTO Customers (CustomerID, FirstName, LastName, DateOfBirth, Address, PhoneNumber, Email)
+VALUES (2, 'Ishank', 'I', TO_DATE('1990-01-15', 'YYYY-MM-DD'), '221C Chefs street', '123-678-4567', 'IshankI@uranus.com');
+
+
+
+INSERT INTO Accounts (AccountNumber, CustomerID, AccountType, Balance)
+VALUES (1001, 1, 'Savings', 50000.00);
+
+INSERT INTO Accounts (AccountNumber, CustomerID, AccountType, Balance)
+VALUES (1002, 1, 'Current', 25001.00);
+
+INSERT INTO Accounts (AccountNumber, CustomerID, AccountType, Balance)
+VALUES (1003, 2, 'Savings', 70006.00);
+
+INSERT INTO Transactions (TransactionID, AccountNumber, TransactionType, Amount, TransactionDate)
+VALUES
+    (1, 1001, 'Deposit', 1000.00, TO_TIMESTAMP('2023-09-20 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO Transactions (TransactionID, AccountNumber, TransactionType, Amount, TransactionDate)
+VALUES
+    (3, 1002, 'Deposit', 200.00, TO_TIMESTAMP('2023-09-20 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO Transactions (TransactionID, AccountNumber, TransactionType, Amount, TransactionDate)
+VALUES
+    (4, 1003, 'Deposit', 1500.00, TO_TIMESTAMP('2023-09-20 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+
+select * from Customers;
+
+select * from Accounts;
+
+select * from Transactions;
